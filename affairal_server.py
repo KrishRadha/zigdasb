@@ -123,3 +123,7 @@ def get_profid_data(ids):
 def shutdown():
     shutdown_server()
     return 'Server shutting down...'
+if __name__ == '__main__':
+     app.debug = True
+     port = int(os.environ.get("PORT", 5000))
+     app.run(host='0.0.0.0', port=port)

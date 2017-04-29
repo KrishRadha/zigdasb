@@ -1,0 +1,1 @@
+web: python affairal_server.py
