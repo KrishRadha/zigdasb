@@ -5,6 +5,7 @@ import pprint
 from flask.ext.pymongo import PyMongo
 from werkzeug import secure_filename
 from bson import ObjectId
+import os
 
 app = Flask(__name__)
 ##MONGODB CONFIG
