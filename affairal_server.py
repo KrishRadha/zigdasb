@@ -13,7 +13,8 @@ mongousername='champrakri'
 mongopassword='databasepassword'
 
 ## NOT HANDLING CONNECTION & SERVER DOWN EXCEPTIONS
-app.config['MONGO_URI']='mongodb://localhost:27017/affairal_hiring'
+#app.config['MONGO_URI']='mongodb://localhost:27017/affairal_hiring'
+app.config['MONGO_URI']='mongodb://champrakri:databasepassword@ds123351.mlab.com:23351/affairal_hiring'
 mongo = PyMongo(app)
 
 #FILE UPLOADS
