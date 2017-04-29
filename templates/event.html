@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="eventsApp">
+<head>
+  <title>Events @ Affairal</title>
+  <!-- js&  CSS -->
+  <link href="{{url_for('static', filename='flatui/dist/css/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet"/>
+    <link href="{{url_for('static', filename='flatui/dist/css/flat-ui.min.css')}}" rel="stylesheet">
+<script src="{{url_for('static', filename='flatui/dist/js/vendor/jquery.min.js')}}" type="text/javascript"></script>
+    <script  src="{{url_for('static', filename='js/angular.min.js')}}" type='text/javascript'></script>
+    <script  src="{{url_for('static', filename='js/custangular.js')}}" type='text/javascript'></script>
+
+      <script>
+      //var data={{ data|safe }};
+      //for (x in data){console.log(x.encode('utf8'))}
+
+
+      </script>
+</head>
+
+<body ng-controller="EventCont">
+
+
+<!----------------------------------------- NAVBAR =------------------------------------->
+
+  <div class="row demo-row">
+        <div class="col-xs-12">
+          <nav class="navbar navbar-inverse navbar-embossed" style="border-radius:0px" role="navigation">
+
+            <div class="navbar-header">
+              <a class="navbar-brand" href="#">Affairal</a>
+            </div>
+
+            <form class="navbar-form navbar-right " action="#" role="search">
+             <a href="/admin" class="btn btn-block btn-lg btn-primary" style="font-size:20">Admin login</a>
+            </form>
+
+          </nav><!-- /navbar -->
+        </div>
+      </div> <!-- /row -->
+<div id="usereg">
+<h3 align="center">Signup @ Events <span class="fui-calendar"></span> </h3><hr/>
+
+<!-- HEADER COMPLETE -->
+<div class="row" >
+
+<div class="col-md-3"></div>
+<div class="col-md-6">
+
+  <div class="form">
+              <input type="text" value="" ng-model="user.fullname" placeholder="Enter Your Full name" class="form-control" />
+              <br>
+              <input type="text" value="" ng-model="user.mobilenumber" placeholder="Enter Your Mobile Number" class="form-control" />
+              <br><input type="text" value="" ng-model="user.email" placeholder="Enter Your Email Address" class="form-control" />
+              <br/>
+              <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-5">
+              <label> Select number of Tickets </label><br>
+              <select class=" select select-primary form-control " ng-init="user.notickets=1" ng-model="user.notickets" ng-options="notickets as notickets for notickets in [1,2,3,4]" style="background-color:#1ABC9C" data-toggle="select">
+
+              </select>
+              </div>
+              <div class="col-md-5">
+              <label> Registration type </label><br>
+             <select class=" select select-primary form-control " ng-init="user.regtype='self'"  ng-model="user.regtype" ng-options="obj.id as obj.name for obj in [{id:'self',name:'SELF'},{id:'group',name:'Group'},{id:'corporate',name:'Corporate'},{id:'others',name:'Others'}]" style="background-color:#1ABC9C" data-toggle="select">
+
+             </select></div>
+             <div class="col-md-1"></div>
+           </div>
+     </br><label align="center">Upload an Id card proof for the event :</label><input fileread="user.idfile" align="center" type="file" placeholder="Upload an Id card proof for the event" class="form-control" accept="image/x-png,image/gif,image/jpeg">
+     <br/>
+     <div class="row"><div class="col-md-4"></div><div class="col-md-4"><a href="#fakelink" align="center" onclick="javascript:Submit_Ask()"class="btn btn-block btn-primary">Register Now</a></div><div class="col-md-4"></div></div>
+
+
+  </div>
+
+
+
+</div>
+<div class="col-md-3"></div>
+
+
+</div>
+
+</div><!-- USER REG -->
+<div id="userpre">
+<h3 align="center">Preview your Details & Submit <span class="fui-edit"></span> </h3><hr/>
+
+
+
+<div class="row">
+
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+
+    Name : <h6 >{% raw %}{{user.fullname}}{% endraw %}</h6> <br/>
+    Mobile Number : <h6 >{% raw %}{{user.mobilenumber}}{% endraw %}</h6> <br/>
+    Email Address : <h6>{% raw %}{{user.email}}{% endraw %}</h6> <br/>
+    Number of Tickets : <h6>{% raw %}{{user.notickets}}{% endraw %}</h6> <br/>
+    Registration type : <h6 >{% raw %}{{user.regtype}}{% endraw %}</h6> <hr/>
+    Id proof : <br/><img align="center" width="300" height="300" ng-src="{% raw %} {{user.idfile}} {% endraw %}"/> <hr/>
+
+    <div class="row"><div class="col-md-3"></div><div class="col-md-3"><a href="#fakelink" align="center" ng-click="Register_Now()" class="btn btn-block btn-primary">Register Now</a></div>
+    <div class="col-md-3"><a href="#fakelink" align="center" onclick="javascript:Reg_Again()" class="btn btn-block btn-danger"> Edit details?</a></div><div class="col-md-3"></div></div>
+
+  </div>
+  <div class="col-md-3"></div>
+
+</div>
+
+
+</div>
+
+<div id="error_div"><h3 align="center">AN ERROR OCCURED TRY AGAIN , click <a href="javascript:Reg_Again()"> HERE </a>to try again</h3> <div align="center" id="error_name"></div></div>
+<div id="us_done_reg_div"><h3 align="center">Succesfully registered for event, Your id is <div id="regidiv"></div></h3></div>
+
+<script>
+
+$('#userpre').hide();
+$('#error_div').hide();
+$('#us_done_reg_div').hide();
+
+function Submit_Ask(){
+//console.log('ahsdhas');
+$('#usereg').hide();
+$('#userpre').show();
+
+}
+
+function Reg_Again(){
+//console.log('ahsdhas');
+$('#error_div').hide();
+$('#userpre').hide();
+$('#usereg').show();
+
+}
+
+
+
+</script>
+
+</body>
+
+</html>

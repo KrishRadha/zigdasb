@@ -1,0 +1,3 @@
+API_KEY=c38b94581b78fbfbab5d1b915f592b34
+SAMPLE= https://data.gov.in/api/datastore/resource.json?resource_id=0a076478-3fd3-4e2c-b2d2-581876f56d77&api-key=c38b94581b78fbfbab5d1b915f592b34&filters[field1]=field1_value&fields=field1,field2,field3&sort[field1]=asc
+https://data.gov.in/api/datastore/resource.json?resource_id=0a076478-3fd3-4e2c-b2d2-581876f56d77&api-key=c38b94581b78fbfbab5d1b915f592b34
