@@ -66,7 +66,7 @@ def register_the_user(user):
 def home_page():
     #result=mongo.db.users.insert([{'name':'RadhaKrishna','age':'18'},{'name':'RadhaKrishna1','age':'18'},{'name':'RadhaKrishna2','age':'18'}])
     #print result
-    return 'successfully run the code duh'
+    return render_template('index.html')
 
 @app.route('/event')
 def render_event():

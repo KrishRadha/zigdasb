@@ -1,32 +1,40 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>Indian Pincode details</title>
+  <title>Events @ Affairal</title>
   <!-- js&  CSS -->
   <link href="{{url_for('static', filename='flatui/dist/css/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet"/>
     <link href="{{url_for('static', filename='flatui/dist/css/flat-ui.min.css')}}" rel="stylesheet">
+<script src="{{url_for('static', filename='flatui/dist/js/vendor/jquery.min.js')}}" type="text/javascript"></script>
+    <script  src="{{url_for('static', filename='js/angular.min.js')}}" type='text/javascript'></script>
+    <script  src="{{url_for('static', filename='js/custangular.js')}}" type='text/javascript'></script>
 
-      <script src="{{url_for('static', filename='flatui/dist/js/vendor/jquery.min.js')}}" type="javascript"></script>
+      <script>
+      //var data={{ data|safe }};
+      //for (x in data){console.log(x.encode('utf8'))}
 
+
+      </script>
 </head>
-
 <body>
+  <!----------------------------------------- NAVBAR =------------------------------------->
 
-<h1 align="center"> Pin Codify  <span class="fui-mail"></span> </h1>
-<br><br><br>
-<div class="row">
- <div class="col-xs-4"></div>
- <div class="col-xs-4">
-  <div class="input-group has-success">
-    <input class="form-control" id="navbarInput-01" type="search" placeholder="Enter Pincode here">
-            <span class="input-group-btn">
-              <button type="submit" class="btn"  style="background-color:#34495E;"><span class="fui-search"></span></button>
-            </span>
-  </div>
-  </div>
-<div class="col-xs-4"></div>
+    <div class="row demo-row">
+          <div class="col-xs-12">
+            <nav class="navbar navbar-inverse navbar-embossed" style="border-radius:0px" role="navigation">
 
-</div>
+              <div class="navbar-header">
+                <a class="navbar-brand" href="#">Affairal</a>
+              </div>
 
-</body>
+              <form class="navbar-form navbar-right " action="#" role="search">
+               <a href="/admin" class="btn btn-block btn-lg btn-primary" style="font-size:20">Admin login</a>
+              </form>
 
-</html>
+            </nav><!-- /navbar -->
+          </div>
+        </div> <!-- /row -->
+<h3 align="center"> Affairal Event Registration!</h3>
+<br/><hr/>
+<div align="center"><h6> Click <a href="/event"> HERE </a> to proceed to event registration!</h6></div>
+</body></html>
